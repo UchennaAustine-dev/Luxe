@@ -4,7 +4,7 @@ import { Instagram, Twitter, Facebook, Youtube } from "lucide-react";
 export function SiteFooter() {
   return (
     <footer className="border-t bg-muted/30">
-      <div className="container px-4 md:px-6 py-12">
+      <div className="container mx-auto px-4 md:px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="space-y-4">
             <h3 className="font-heading text-lg">LUXE</h3>
@@ -111,6 +111,14 @@ export function SiteFooter() {
                   className="text-muted-foreground hover:text-foreground transition-colors"
                 >
                   Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/cookies"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  Cookie Policy
                 </Link>
               </li>
               <li>

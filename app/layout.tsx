@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import { SonnerProvider } from "@/components/sonner-provider";
 import { SiteFooter } from "@/components/common/site-footer";
 import { SiteHeader } from "@/components/common/site-header";
+import { CookieConsent } from "@/components/cookie-consent";
 
 export const metadata = {
   title: "LUXE | Fashion & Lifestyle Blog",
@@ -40,6 +41,7 @@ export default function RootLayout({
             <SiteHeader />
             <main className="flex-1">{children}</main>
             <SiteFooter />
+            <CookieConsent />
           </div>
           <SonnerProvider />
         </ThemeProvider>

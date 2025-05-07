@@ -53,6 +53,7 @@ export function CommentSection({ postId }: CommentSectionProps) {
     // Simulate API call
     await new Promise((resolve) => setTimeout(resolve, 1000));
 
+    // Use postId in the comment creation to associate with the specific post
     const comment: Comment = {
       id: Date.now().toString(),
       author: "You",

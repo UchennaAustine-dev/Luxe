@@ -43,7 +43,7 @@ export default function ContactPage() {
 
     setIsSubmitting(false);
     toast.success("Message sent!", {
-      description: "Thank you for your message! We'll be in touch soon.",
+      description: "Thank you for your message! We&apos;ll be in touch soon.",
       duration: 5000,
     });
     setFormData({ name: "", email: "", subject: "", message: "" });
@@ -55,8 +55,8 @@ export default function ContactPage() {
         <h1 className="font-heading text-4xl md:text-5xl mb-4">Contact Us</h1>
         <Separator className="mx-auto w-20 my-6" />
         <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-          Have a question, suggestion, or just want to say hello? We'd love to
-          hear from you.
+          Have a question, suggestion, or just want to say hello? We&apos;d love
+          to hear from you.
         </p>
       </div>
 
@@ -67,7 +67,9 @@ export default function ContactPage() {
               <Mail className="mr-2 h-5 w-5 text-primary" />
               Email Us
             </CardTitle>
-            <CardDescription>We'll respond within 24-48 hours</CardDescription>
+            <CardDescription>
+              We&apos;ll respond within 24-48 hours
+            </CardDescription>
           </CardHeader>
           <CardContent>
             <a
@@ -119,7 +121,7 @@ export default function ContactPage() {
           <CardHeader>
             <CardTitle>Send Us a Message</CardTitle>
             <CardDescription>
-              Fill out the form below and we'll get back to you as soon as
+              Fill out the form below and we&apos;ll get back to you as soon as
               possible.
             </CardDescription>
           </CardHeader>
