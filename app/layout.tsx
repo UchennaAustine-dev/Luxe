@@ -8,6 +8,8 @@ import { SonnerProvider } from "@/components/sonner-provider";
 import { SiteFooter } from "@/components/common/site-footer";
 import { SiteHeader } from "@/components/common/site-header";
 import { CookieConsent } from "@/components/cookie-consent";
+import Script from "next/script";
+import { GdprProvider } from "@/components/gdpr-provider";
 
 export const metadata = {
   title: "LUXE | Fashion & Lifestyle Blog",
@@ -31,20 +33,28 @@ export default function RootLayout({
           fontHeading.variable
         )}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="light"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <div className="relative flex min-h-screen flex-col">
-            <SiteHeader />
-            <main className="flex-1">{children}</main>
-            <SiteFooter />
-            <CookieConsent />
-          </div>
-          <SonnerProvider />
-        </ThemeProvider>
+        {/* Netpub GDPR Script */}
+        <Script
+          src="https://fstatic.netpub.media/extra/cmp/cmp-gdpr.js"
+          strategy="afterInteractive"
+        />
+
+        <GdprProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="light"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <div className="relative flex min-h-screen flex-col">
+              <SiteHeader />
+              <main className="flex-1">{children}</main>
+              <SiteFooter />
+              <CookieConsent />
+            </div>
+            <SonnerProvider />
+          </ThemeProvider>
+        </GdprProvider>
       </body>
     </html>
   );

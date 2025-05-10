@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Instagram, Twitter, Facebook, Youtube } from "lucide-react";
+import { GdprSettingsButton } from "../gdpr-settings-button";
 
 export function SiteFooter() {
   return (
@@ -129,6 +130,14 @@ export function SiteFooter() {
                   Terms of Service
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/gdpr-preferences"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  GDPR Preferences
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -149,8 +158,11 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="border-t mt-12 pt-6 text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} LUXE. All rights reserved.</p>
+        <div className="border-t mt-12 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-center text-sm text-muted-foreground">
+            &copy; {new Date().getFullYear()} LUXE. All rights reserved.
+          </p>
+          <GdprSettingsButton />
         </div>
       </div>
     </footer>

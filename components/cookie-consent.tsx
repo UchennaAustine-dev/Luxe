@@ -23,11 +23,29 @@ export function CookieConsent() {
   const acceptCookies = () => {
     localStorage.setItem("cookie-consent", "true");
     setIsVisible(false);
+
+    // Trigger Netpub GDPR consent if available
+    if (
+      typeof window !== "undefined" &&
+      window.cmpGdpr &&
+      typeof window.cmpGdpr.acceptAll === "function"
+    ) {
+      window.cmpGdpr.acceptAll();
+    }
   };
 
   const declineCookies = () => {
     localStorage.setItem("cookie-consent", "false");
     setIsVisible(false);
+
+    // Trigger Netpub GDPR decline if available
+    if (
+      typeof window !== "undefined" &&
+      window.cmpGdpr &&
+      typeof window.cmpGdpr.rejectAll === "function"
+    ) {
+      window.cmpGdpr.rejectAll();
+    }
   };
 
   if (!isVisible) return null;
